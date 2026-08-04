@@ -27,16 +27,15 @@ public class Session{
         //Games will loop in here until amount of games selected has been reached.
         for(int i = 0; i < gameAmount; i++)
         {
-            //Increment game amounts
-            i++;
+            System.out.println("GENERATING NEW GAME:");
             //Random number generated
             int target = Utility.RandNumberGen(minRange, maxRange);
+            //win state tracker
+            boolean hasWon = false;
 
             //current game loop
             for (int j = 0; j < guessAmount; j++)
             {
-                //increment guesses
-                j++;
                 //prompt user for guess
                 int guess = Utility.IsValidInt(consoleRead, "Type a guess:");
                 //check guess
@@ -44,7 +43,7 @@ public class Session{
                 {
                     //break loop, and set win conditions
                     gamesWins++;
-                    System.out.println("Correct!");
+                    hasWon = true;
                     break;
                 }
                 //else - guide user in right direction
@@ -54,12 +53,14 @@ public class Session{
                 }
                 else {System.out.println("Try a larger number");}
             }
-
-
-
+            if(hasWon == false)
+            {
+                System.out.println("0 Guesses remaining, the correct number was: " + target);
+            }
+            else{System.out.println("Correct!");}
         }
-
-
-
+        //Output message after total amount of games finished
+        System.out.println("Game Over!");
+        System.out.println("You won: " + gamesWins + "/" + gameAmount + " games!");
     }
 }

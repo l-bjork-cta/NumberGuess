@@ -6,7 +6,8 @@ public class Main {
 
         //Ask user for min and max range for session
         int sessionMinRange = Utility.IsValidInt(consoleRead, "Input lower boundary:");
-        int sessionMaxRange = Utility.IsValidInt(consoleRead, "Input upper boundary:");
+        //Current issue - upper boundary can be set to be lower than lower boundary
+        int sessionMaxRange = Utility.IsValidInt(consoleRead, "Input upper boundary:", sessionMinRange);
         int sessionGameAmount = Utility.IsValidInt(consoleRead, "Input the number of games to be played:");
         int sessionGuessAmount = Utility.IsValidInt(consoleRead, "Input the number of guesses per game:");
 
