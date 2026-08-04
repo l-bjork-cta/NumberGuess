@@ -20,7 +20,16 @@ public class Session{
         //Display choices back to user
         System.out.println("You have selected to play: "
                 + gameAmount + " games with " + guessAmount + "guesses per game!");
+        System.out.println("Range is set between: " + maxRange + " and " + maxRange);
         //Start game logic
+        //win amount tracker
+        int gamesWins = 0;
+        //Games will loop in here until amount of games selected has been reached.
+        for(int i = 0; i < gameAmount; i++)
+        {
+
+        }
+
 
 
     }
