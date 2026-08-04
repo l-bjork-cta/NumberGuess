@@ -1,28 +1,26 @@
 import java.util.Scanner;
-public class Session {
-    public static void main() {
-        //Create scanner
-        Scanner consoleRead = new Scanner(System.in);
+//Class attributes
+public class Session{
+    private int minRange;
+    private int maxRange;
+    private int gameAmount;
+    private int guessAmount;
 
-        //Ask user for min and max range for session
-        int sessionMinRange = Utility.IsValidInt(consoleRead, "Input lower boundary:");
-        int sessionMaxRange = Utility.IsValidInt(consoleRead, "Input upper boundary:");
-        int sessionGameAmount = Utility.IsValidInt(consoleRead, "Input the number of games to be played:");
-        int sessionGuessAmount = Utility.IsValidInt(consoleRead, "Input the number of guesses per game:");
-
-        //Pass ranges for number into random number generator and save to var
-        int sessionRandNum = Utility.RandNumberGen(sessionMinRange,sessionMaxRange);
-
-
-
-        //success of random num generated, show ranges
-        System.out.println("New number generated in range " + sessionMinRange + " and " +sessionMaxRange + " !" );
-        System.out.println("You will play: " + sessionGameAmount + " games, with " + sessionGuessAmount
-                + " guesses per game");
-        System.out.println("A new number within the ranges will be generated for each game");
-
-
-
+    //Class constructor
+    public Session(int minRange,int maxRange, int gameAmount, int guessAmount)
+    {
+        this.minRange = minRange;
+        this.maxRange = maxRange;
+        this.gameAmount = gameAmount;
+        this.guessAmount = guessAmount;
+    }
+    //Session creator --- instantiation??
+    public void startSession(Scanner consoleRead)
+    {
+        //Display choices back to user
+        System.out.println("You have selected to play: "
+                + gameAmount + " games with " + guessAmount + "guesses per game!");
+        //Start game logic
 
 
     }
